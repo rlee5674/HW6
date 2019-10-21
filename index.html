@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="stylesheet.css">
+<title>JQuery HW 6</title>	
+<script type = "text/javascript">
+
+	//array of 5 objects. Each object has name, price, small and large
+	var totArr = [
+	[{"name":"Bulbasaur","price": "40","small":"Bulbasaur.jpg", "large":"BulbBIG.jpg"}],
+	[{"name":"Growlithe","price": "50","small":"Growlithe.jpg", "large": "GrowBIG.jpg"}],
+	[{"name":"Misdreavus","price":"20","small":"Misdreavus.jpg", "large":"MisBIG.jpg"}],
+	[{"name":"Pikachu","price":"100","small":"Pikachu.jpg", "large":"PikaBIG.jpg"}],
+	[{"name":"Squirtle","price":"30","small":"Squirtle.jpg", "large":"SquiBIG.jpg"}]
+	];
+</script>
+</head>
+
+<body>
+	<header> 
+		<h1> Pokemon Gallery </h1>
+	</header>
+
+	<div id = "descrip">
+		<p id = "1Des" style="margin-left: 5%"></p>
+		<p id = "2Des" style="margin-left: 24%"></p>
+		<p id = "3Des" style="margin-left: 43%"></p>
+		<p id = "4Des" style="margin-left: 61.6%"></p>
+		<p id = "5Des" style="margin-left: 80.6%"></p>
+	</div>
+
+	<div id = "gallery">
+		<img id = "item-1" src = "Bulbasaur.jpg" style="float: left; margin-left: 5%; margin-right: 5%">
+		<img id = "item-2" src = "Growlithe.jpg" style="float: left; margin-left: 5%; margin-right: 5%">
+		<img id = "item-3" src = "Misdreavus.jpg" style="float: left; margin-left: 5%; margin-right: 5%">
+		<img id = "item-4" src = "Pikachu.jpg" style="float: left; margin-left: 5%; margin-right: 5%">
+		<img id = "item-5" src = "Squirtle.jpg" style="float: left; margin-left: 5%; margin-right: 5%">
+	</div>
+
+	<div id = "bigger">
+		<img id = "item-1Big" style="float: left; margin-top: 5%; margin-left: 35%; margin-right: 12%">
+		<img id = "item-2Big" style="float: left; margin-top: 5%; margin-left: 35%; margin-right: 12%">
+		<img id = "item-3Big" style="float: left; margin-top: 5%; margin-left: 35%; margin-right: 12%">
+		<img id = "item-4Big" style="float: left; margin-top: 5%; margin-left: 35%; margin-right: 12%">
+		<img id = "item-5Big" style="float: left; margin-top: 5%; margin-left: 35%; margin-right: 12%">
+	</div>
+
+
+
+	<script type = "text/javascript">
+		$(document).ready(function(){
+			//alert("Welcome to the Sakuragi Institute Art Exhibition")
+		});
+/////////////////////////////////////////////////////
+		//hovering and displaying big picture
+		$("#item-1").mouseenter(function(){
+			$("#item-1Big").attr("src", "BulbBIG.jpg").hide().fadeIn(1000).delay(1000).fadeOut();
+		});
+		$("#item-2").mouseenter(function(){
+			$("#item-2Big").attr("src", "GrowBIG.jpg").hide().fadeIn(1000).delay(1000).fadeOut();
+		});
+		$("#item-3").mouseenter(function(){
+			$("#item-3Big").attr("src", "MisBIG.jpg").hide().fadeIn(1000).delay(1000).fadeOut();
+		});
+		$("#item-4").mouseenter(function(){
+			$("#item-4Big").attr("src", "PikaBIG.jpg").hide().fadeIn(1000).delay(1000).fadeOut();
+		});
+		$("#item-5").mouseenter(function(){
+			$("#item-5Big").attr("src", "SquiBIG.jpg").hide().fadeIn(1000).delay(1000).fadeOut();
+		});
+
+//////////////////////////////////////////////////////
+		//clicking and displaying information
+		$("#item-1").click(function(){
+			$("#1Des").html("Name: " + totArr[0][0].name + " <br> " + "Price: " + totArr[0][0].price).delay(5000).fadeOut();
+		});
+		$("#item-2").click(function(){
+			$("#2Des").html("Name: " + totArr[1][0].name + " <br> " + "Price: " + totArr[1][0].price).delay(5000).fadeOut();
+		});
+		$("#item-3").click(function(){
+			$("#3Des").html("Name: " + totArr[2][0].name + " <br> " + "Price: " + totArr[2][0].price).delay(5000).fadeOut();
+		});
+		$("#item-4").click(function(){
+			$("#4Des").html("Name: " + totArr[3][0].name + " <br> " + "Price: " + totArr[3][0].price).delay(5000).fadeOut();
+		});
+		$("#item-5").click(function(){
+			$("#5Des").html("Name: " + totArr[4][0].name + " <br> " + "Price: " + totArr[4][0].price).delay(5000).fadeOut();
+		});
+
+
+	</script>
+
+</body>
+</html>
